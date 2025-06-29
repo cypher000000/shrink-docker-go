@@ -41,7 +41,7 @@ We can use [Pocketbase](https://github.com/pocketbase/pocketbase) Go app to test
 - 33 Mb app size
   -  Result: 41 Mb image size
     
-![after](screens/layers_after.png?cachebust=1)
+![after](screens/layers_2_2.png?cachebust=1)
 
 ## Versions
 
@@ -73,7 +73,7 @@ So, if we test this on Pocketbase, we'll get
 -  13 Mb app size
   -  Result: 21 Mb image size
     
-![after upx](screens/layers_upx.png?cachebust=1)
+![after upx](screens/layers_1_1.png?cachebust=1)
 
 Guide to compress GoLang binaries:
 https://github.com/akshaybharambe14/golang-examples/tree/master/binaryCompression

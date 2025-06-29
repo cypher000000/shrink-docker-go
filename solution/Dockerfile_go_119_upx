@@ -7,4 +7,6 @@ RUN apk add --no-cache go {dependence apk} git \
  && cd / \
  && upx -9 app \
  && apk del go {dependence apk} git upx \
- && rm -rf /app_b /var/cache/apk/* /root/go /root/.cache /{dependence build}
+ && rm -rf /app_b /var/cache/apk/* /{dependence build}
+# or
+# && rm -rf /app_b /var/cache/apk/* /root/go /root/.cache /{dependence build}

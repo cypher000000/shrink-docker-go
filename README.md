@@ -73,7 +73,7 @@ So, if we test this on Pocketbase, we'll get
 -  13 Mb app size
   -  Result: 21 Mb image size
     
-![after](screens/layers_after_upx.png)
+![after](screens/layers_upx.png)
 
 Guide to compress GoLang binaries:
 https://github.com/akshaybharambe14/golang-examples/tree/master/binaryCompression

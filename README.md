@@ -9,18 +9,17 @@ COPY {source} (287Mb)
 RUN apk add {dependence} (100Mb)
 RUN build (10Mb)
 ```
-The size of each layer after the build is specified in parentheses.
-Task: Minimize the final image size as much as possible. Write a modified Dockerfile and specify the resulting image size in your answer.
-Optional Task*: The Dockerfile should consist of only two lines.
-Only the Dockerfile can be modified — the pipeline code cannot be changed.
+The size of each layer after the build is specified in parentheses.  
+Task: Minimize the final image size as much as possible. Write a modified Dockerfile and specify the resulting image size in the answer.  
+Optional Task*: The Dockerfile should consist of only two lines.  
+Only the Dockerfile can be modified — the pipeline code cannot be changed.  
 Assume Docker version before 17 (i.e., version 1.13.1 or earlier) when making changes to the Dockerfile, so we can't use the multi-stage builds or "RUN --mount".
 
 ## Solution
 
-1st, we'll upload our source code to any Git repository, so we can pull it from here, but only depth 1.
+1st, we'll upload our source code to any Git repository, so we can pull it from here, but only depth 1.  
 2nd, we'll rewrite go build step, and finally, we'll delete everything unnecessary after the build.
 
-Here I've made two simple Dockerfiles for different Go versions, because of "build -C /path/" arg in solution dir
 Here I've made [two simple Dockerfiles](https://github.com/cypher000000/shrink-docker-go/tree/main/solution) for different Go versions, because of "build -C /path/" arg in solution dir
 
 ## Testing 

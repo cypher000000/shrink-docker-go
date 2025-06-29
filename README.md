@@ -74,7 +74,6 @@ So, if we test this on Pocketbase, we'll get
   -  Result: 21 Mb image size
     
 ![after upx](screens/layers_upx.png?cachebust=1)
-![after]
 
 Guide to compress GoLang binaries:
 https://github.com/akshaybharambe14/golang-examples/tree/master/binaryCompression

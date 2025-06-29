@@ -1,0 +1,8 @@
+#before shrink
+#go=>1.23
+FROM alpine:3.22
+RUN apk add --no-cache go ca-certificates git
+RUN git clone --single-branch --branch master https://github.com/pocketbase/pocketbase  /app_b 
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -C /app_b/examples/base -ldflags "-s -w" -o /app 
+EXPOSE 8080
+CMD ["/app", "serve", "--http=0.0.0.0:8080"]

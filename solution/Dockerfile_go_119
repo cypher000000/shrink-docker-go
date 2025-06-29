@@ -7,4 +7,5 @@ RUN apk add --no-cache go {dependence apk} git \
  && go clean --cache --modcache --testcache --fuzzcache \ 
  && apk del go {dependence apk} git \
  && rm -rf /app_b /var/cache/apk/* /{dependence build}
+# or
 # && rm -rf /app_b /var/cache/apk/* /root/go /root/.cache /{dependence build}

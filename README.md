@@ -21,13 +21,14 @@ Assume Docker version before 17 (i.e., version 1.13.1 or earlier) when making ch
 2nd, we'll rewrite go build step, and finally, we'll delete everything unnecessary after the build.
 
 Here I've made two simple Dockerfiles for different Go versions, because of "build -C /path/" arg in solution dir
+Here I've made [two simple Dockerfiles](https://github.com/cypher000000/shrink-docker-go/tree/main/solution) for different Go versions, because of "build -C /path/" arg in solution dir
 
 ## Testing 
 
 We can use [Pocketbase](https://github.com/pocketbase/pocketbase) Go app to test our solution
 
 
- Image layers before:
+ [Image layers before](https://github.com/cypher000000/shrink-docker-go/blob/main/testing/Dockerfile_t_before):
 - 8 mb+ alpine base
 - 385 Mb+ apk
 - 125 Mb+ git clone
@@ -36,7 +37,7 @@ We can use [Pocketbase](https://github.com/pocketbase/pocketbase) Go app to test
     
 ![before](screens/layers_before.png?cachebust=1)
 
- Image layers after:
+ [Image layers after](https://github.com/cypher000000/shrink-docker-go/blob/main/testing/Dockerfile_t_after):
 - 8 Mb+ alpine base
 - 33 Mb app size
   -  Result: 41 Mb image size
@@ -68,7 +69,7 @@ PS:
 Also, we can use UPX to shrink Go app more. To do this, we need to add it in the "apk add" line and after "go build line" smth like ```&& upx -9 app \```.
 So, if we test this on Pocketbase, we'll get 
 
- Image layers after:
+ [Image layers after UPX](https://github.com/cypher000000/shrink-docker-go/blob/main/testing/Dockerfile_t_after_upx):
 -  8 Mb+ alpine base
 -  13 Mb app size
   -  Result: 21 Mb image size

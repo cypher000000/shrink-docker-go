@@ -32,7 +32,8 @@ We can use [Pocketbase](https://github.com/pocketbase/pocketbase) Go app to test
 - 8 mb+ alpine base
 - 385 Mb+ apk
 - 125 Mb+ git clone
-- 840 Mb+ go build + 33 Mb app size
+- 875 Mb+ go build
+- 33 Mb app size
   -  Result: 1.43 Gb image size
     
 ![before](screens/layers_before.png?cachebust=1)

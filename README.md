@@ -34,20 +34,20 @@ We can use [Pocketbase](https://github.com/pocketbase/pocketbase) Go app to test
 - 125 Mb+ git clone
 - 875 Mb+ go build
 - 33 Mb app size
-  -  Result: 1.43 Gb image size
+  - **Result: 1.43 Gb image size**
     
 ![before](screens/layers_before.png?cachebust=1)
 
  [Image layers after](https://github.com/cypher000000/shrink-docker-go/blob/main/testing/Dockerfile_t_after):
 - 8 Mb+ alpine base
 - 33 Mb app size
-  -  Result: 41 Mb image size
+  -  **Result: 41 Mb image size**
     
 ![after](screens/layers_2_2.png?cachebust=1)
 
 ## Versions
 
-- Docker 27.0.3
+- Docker 27.0.3 (I think it will work fine on 1.13.1)
 - installed on Ubuntu 22.04
 
 ## How to test
@@ -73,7 +73,8 @@ So, if we test this on Pocketbase, we'll get
  [Image layers after UPX](https://github.com/cypher000000/shrink-docker-go/blob/main/testing/Dockerfile_t_after_upx):
 -  8 Mb+ alpine base
 -  13 Mb app size
-  -  Result: 21 Mb image size
+
+**Result: 21 Mb image size**
     
 ![after upx](screens/layers_1_1.png?cachebust=1)
 

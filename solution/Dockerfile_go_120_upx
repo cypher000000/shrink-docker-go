@@ -1,0 +1,10 @@
+#go=>1.20
+FROM alpine:3.22
+RUN apk add --no-cache go {dependence apk} git \
+ && git clone --depth 1 --single-branch --branch {branch} {source} /app_b \
+ && GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -C /app_b/{source} -ldflags "-s -w" -o /app \
+ && go clean --cache --modcache --testcache --fuzzcache \ 
+ && apk del go {dependence apk} git \
+ && rm -rf /app_b /var/cache/apk/* /{dependence build}
+# or
+# && rm -rf /app_b /var/cache/apk/* /root/go /root/.cache /{dependence build}
